@@ -28,5 +28,5 @@ gpg2 --verify ${TECTONIC_LATEST_ZIP}.sig $TECTONIC_LATEST_ZIP
 
 rm -Rf tectonic/
 mkdir tectonic
-unzip -d tectonic/ /${TECTONIC_LATEST_ZIP}
+unzip -d tectonic/ ${TECTONIC_LATEST_ZIP}
 
