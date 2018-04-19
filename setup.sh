@@ -15,17 +15,13 @@ case "$OSTYPE" in
   # *)        echo "unknown: $OSTYPE" ;;
 esac
 
-# Prepare the tectonic installer
+# Navigate to current users home dir
 cd $USER_HOME
 
 # Download Tectonic installer
 curl -O https://releases.tectonic.com/releases/${TECTONIC_LATEST_ZIP}
-curl -O https://releases.tectonic.com/releases/${TECTONIC_LATEST_ZIP}.sig
 
-# Verify if the download is valid
-gpg2 --keyserver pgp.mit.edu --recv-key 18AD5014C99EF7E3BA5F6CE950BDD3E0FC8A365E
-gpg2 --verify ${TECTONIC_LATEST_ZIP}.sig $TECTONIC_LATEST_ZIP
-
+# Prepare the installation
 rm -Rf tectonic/
 mkdir tectonic
 unzip -d tectonic/ ${TECTONIC_LATEST_ZIP}
