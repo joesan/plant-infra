@@ -205,4 +205,8 @@ The above command will take some time to finish. Have a coffee break and be back
 
 TODO: Add content from the log file
 
+If you are aiming for a HA master / etcd setup, have a look at the following official documentation. It is a bit elaborated and a time consuming process to set up HA master / etcd. So good luck and if you manage to do it, please let me know!
+
+https://kubernetes.io/docs/setup/independent/high-availability/#installing-prerequisites-on-masters
+
 ### STEP 4: Set up K8s Worker
