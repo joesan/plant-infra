@@ -64,11 +64,33 @@ If prompted for a "Settings Password", you can find it from your ISP documentati
 
 TODO: Add screenshot
 
-#### Change the hostname
+#### Change the default password and the hostname
+
+It is a good practice to change the default password of your Pi, which is raspbian. To change the default password, do the following:
+
+Open a terminal windown on your local machine and ssh into your Pi with the ip address of your Pi:
+
+```
+$ ssh pi@192.168.0.122
+```
+
+Type the password and log in. Once logged in, give the following command to change the password:
+
+```
+$ raspbian.local:~ pi$ passwd
+```
 
 Now, by default your pi has raspbian.local as the host name. It makes sense to change this so that you can later on ssh into it with your hostname that you can identify and relate to. I would rename my Pi to something meaningful and contextful. In this case, I would name my Pi's as masters and workers. Since we are dealing with multiple masters and workers, I would assign each Pi, the corresponding name with a number associated with it. For example., if I have multiple masters, I would name them k8s-master-01, kas-master-02 and so on.
 
 To set the hostname for your Pi, do the following:
+
+```
+sudo nano /etc/hostname
+```
+
+This file contains only one line - the name of your Pi.  Change the name to whatever you like, but only use the letters 'a' to 'z' (upper or lower), digits '0' to '9', and the dash '-'
+
+Since you are ssh'ing for the first time 
 
 #### Set a static IP for the Pi
 
