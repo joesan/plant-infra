@@ -134,7 +134,7 @@ Once you have done this, let us reboot the pi so that your settings could take e
 sudo reboot
 ```
 
-When you log in the next time, you can log in using your hostname instead of the ip address
+When you log in the next time, you should be able to see the ip address that you have just configured for the Pi.
 
 REPEAT STEP 2 FOR ALL OF YOUR PI's
 
