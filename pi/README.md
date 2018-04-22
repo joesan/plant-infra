@@ -140,4 +140,21 @@ REPEAT STEP 2 FOR ALL OF YOUR PI's
 
 ### STEP 3: Set up K8s Master
 
+Create a kubeadm_conf.yaml with the following content:
+
+```
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+controllerManagerExtraArgs:
+  pod-eviction-timeout: 40s
+```
+
+Next initialize the the kubeadm as follows:
+
+```
+sudo kubeadm init --token-ttl=0 --config kubeadm_conf.yaml
+```
+
+We pass in --token-ttl=0 so that the token never expires - do not use this setting in production.
+
 ### STEP 4: Set up K8s Worker
