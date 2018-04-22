@@ -23,14 +23,40 @@ You need the following items to work with:
 * You need micro USB cables to power up your pi
 
   AUKEY Micro USB Power Cable - Have a look [here](https://tinyurl.com/yabcnfq2)
+  
+* Category 6 Flat LAN cables (TODO: Add Documentation....)
 
 I would prefer not to spend any more money on any additional accessories like a monitor or a USB keyboard. You can do this whole setup as headless. Please read on to find out how!
 
+## Set Up Steps
+
 Now that we have all the components that we need, it is time for us to get started with the set up!
 
-### STEP 1: Flash the SD Card
+### STEP 1: Download the Raspbian OS & Flash the SD Card
+
+Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbian/) and download the latest version of the software that is available. At the time of this writing, it is the April 2018 version that I used. Get the one with no UI packages in it. I downloaded the RASPBIAN STRETCH LITE. Once you download the zip file, you can either extract it or if you intend to use Etcher, you can leave it as is.
+
+For flashing the SD card, you can download this awesome tool from resin.io, the "Etcher" - You can download it from [here](https://etcher.io/)
+
+Once you download Etcher, the flashing process is pretty simple and straight forward. Just add the image, select the drive (Etcher even pre-selects the SD card for you. Just verify it for the correctness and hit Flash.
+
+There is one very important step that you should do to enable SSH access to your Pi once you connect it to your router. On your Mac, after you have flashed your SD card, open a Terminal window and do the following:
+
+```
+$ touch /Volumes/boot/ssh
+```
+
+REPEAT STEP 1 FOR ALL OF YOUR PI's
 
 ### STEP 2: Boot up the Pi
+
+Insert the flashed SD card in the Pi and hook up the power source. The power source will be your AUKEY USB Power Source that you might have purchased. Assuming that you have a home router, connect the LAN cable of your home router to the LAN slot on the Pi. We will make the following changes to the Pi:
+
+#### Change the default hostname
+
+Now, by default your pi has raspbian.local as the host name. It makes sense to change this so that you can later on ssh into it
+
+REPEAT STEP 2 FOR ALL OF YOUR PI's
 
 ### STEP 3: Set up K8s Master
 
