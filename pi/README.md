@@ -66,7 +66,7 @@ TODO: Add screenshot
 
 #### Change the default password and the hostname
 
-It is a good practice to change the default password of your Pi, which is raspbian. To change the default password, do the following:
+It is a good practice to change the default password of your Pi, which is raspberry. To change the default password, do the following:
 
 Open a terminal windown on your local machine and ssh into your Pi with the ip address of your Pi:
 
