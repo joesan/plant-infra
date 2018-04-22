@@ -98,7 +98,15 @@ There is a second file that also contains the hostname. Therefore you should als
 sudo nano /etc/hosts
 ```
 
-Find the line starting with 127.0.0.1, and change the name following it to your new hostname.  Save the file using Ctrl+x, then Y followed by Enter
+Find the line starting with 127.0.0.1, and change the name following it to your new hostname.  Save the file using Ctrl+x, then Y followed by Enter.
+
+Here after you can log in to your Pi using the hostname as:
+
+```
+ssh pi@k8s-master-01.local
+```
+
+Make sure you supply the .local to the hostname, otherwise it does not work!
 
 #### Set a static IP for the Pi
 
