@@ -178,6 +178,8 @@ $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key a
 
 We are now done with the needed installations, it is now time to set up our master!
 
+REPEAT STEP 3 FOR ALL OF YOUR PI's
+
 ### STEP 4: Set up K8s Master
 
 So we now have installed the kubeadm tool, we will use this to initialize our master node. To do this we first create a config file called kubeadm_config.yaml
