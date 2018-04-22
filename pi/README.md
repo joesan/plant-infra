@@ -102,7 +102,23 @@ Find the line starting with 127.0.0.1, and change the name following it to your 
 
 #### Set a static IP for the Pi
 
+It makes sense here to assign a static IP for your Pi, even though this is considered a bad practice in the networking world. But we want to make sure that the cluster does not break when you power off ynd on your set of Pi's. To set a static IP do the following:
 
+From the ssh terminal window, give the following command:
+
+```
+sudo nano /etc/dhcpcd.conf
+```
+
+Copy and paste this block of settings in the dhcpcd.conf file:
+
+```
+profile static_eth0
+static ip_address=192.168.0.100/24
+static routers=192.168.0.1
+static domain_name_servers=8.8.8.8
+```
+Make sure that you change the ip_address accordingly. Here in my case, I would just name them from 101 to 110. So my k8s-master-01 would be allocated to 192.168.0.101 and my k8s-master-02 would be allocated to 192.168.0.102 and so on
 
 REPEAT STEP 2 FOR ALL OF YOUR PI's
 
