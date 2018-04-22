@@ -12,7 +12,11 @@ You need the following items to work with:
 
 * Raspberry Pi (Either model 2 or model 3) - Get the model 3 B+ as it carries more power. I recommend getting atleast 4 of them.
 
-* A stackable case to hold your Pi's - I got [this case](https://www.amazon.de/dp/B00NB1WPEE/ref=pe_3044161_185740101_TE_item) and a [holding plate](https://www.amazon.de/dp/B00NB1WQZW/ref=pe_3044161_185740101_TE_item) from Amazon Germany. You will find something similiar in your region. Search for "Stackable open Raspberry Pi cases" and I'm sure you will find something similiar to mine.
+* A stackable case to hold your Pi's - I got [this case](https://www.amazon.de/H%C3%B6henverstellbares-stapelbares-Abstandsbolzen-Vullers-Tech/dp/B00NB1WPEE/ref=sr_1_1?ie=UTF8&qid=1524379184&sr=8-1&keywords=H%C3%B6henverstellbares+stapelbares+Raspberry+Pi+3%2C+Raspberry+Pi+2%2C+Raspberry+Pi+B%2B+Geh%C3%A4use+Glasklar) and a [holding plate](https://www.amazon.de/Zwischenplatte-Raspberry-Vullers-Tech-G-RP-BPC/dp/B00NB1WQZW/ref=sr_1_1?s=computers&ie=UTF8&qid=1524379276&sr=1-1&keywords=x+Zwischenplatte+f%C3%BCr+Raspberry+Pi+3%2C+Raspberry+Pi+2%2C+Raspberry+Pi+B%2B%2C+A%2B%2C+Vullers+Tech+Case+G-RP-BPC) from Amazon Germany. The holding place for me is just a way for me to be able to stack more Pi's later on. 
+
+You will find something similiar in your region. Search for "Stackable open Raspberry Pi cases" and I'm sure you will find something similiar to mine.
+
+* Micro SDHC cards - Get a class 10 than has a good read / write speed. I bought the [San Disk Ultra](https://www.amazon.de/SanDisk-Ultra-microSDHC-Speicherkarte-Adapter/dp/B073S8LQSL/ref=sr_1_fkmr0_2?ie=UTF8&qid=1524379123&sr=8-2-fkmr0&keywords=micro+sdhc+card+san+dick)
 
 * Power supply for the Pi's - The official power supply recommendation for the Pi 3 model B+ is a 5v and 2.5A - Take a look [here](https://www.raspberrypi.org/help/faqs/) and search for "WHAT ARE THE POWER REQUIREMENTS" on that page. So based on this, I would recommend to get the following:
 
