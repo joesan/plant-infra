@@ -138,7 +138,47 @@ When you log in the next time, you should be able to see the ip address that you
 
 REPEAT STEP 2 FOR ALL OF YOUR PI's
 
-### STEP 3: Set up K8s Master
+### STEP 3: Install Docker and Kubernetes
+
+Use the following command to install Docker:
+
+```
+curl -sSL get.docker.com | sh && \
+  sudo usermod pi -aG docker
+```
+
+For Kubernetes 1.7 and newer you will get an error if swap space is enabled, so we need to disable swap:
+
+```
+sudo dphys-swapfile swapoff && \
+  sudo dphys-swapfile uninstall && \
+  sudo update-rc.d dphys-swapfile remove
+```
+
+To make sure that swap is removed or disabled, the following command should give no result or entries back:
+
+```
+$ sudo swapon --summary
+```
+
+Once Docker is installed and swap disabled, we can proceed with the installation of [kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/). Now if you are concerned about installting a specific version of the kubernetes cluster, you can try the following command that will give you all the available versions:
+
+```
+curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages | grep Version | awk '{print $2}'
+```
+
+You can now decide on the version that you want toinstall. As a side note, as of this writing, it is advisable to not go beyond 1.9.6 version of Kubernetes as the later versions have some bugs and is unstable at the moment.
+
+```
+$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - && \
+  echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && \
+  sudo apt-get update -q && \
+  sudo apt-get install -qy kubelet=1.9.6-00 kubectl=1.9.6-00 kubeadm=1.9.6-00
+```
+
+The above command will take some time to finish. Have a coffee break and be back!
+
+### STEP 4: Set up K8s Master
 
 Create a kubeadm_conf.yaml with the following content:
 
