@@ -176,11 +176,17 @@ $ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key a
   sudo apt-get install -qy kubelet=1.9.6-00 kubectl=1.9.6-00 kubeadm=1.9.6-00
 ```
 
-The above command will take some time to finish. Have a coffee break and be back!
+We are now done with the needed installations, it is now time to set up our master!
 
 ### STEP 4: Set up K8s Master
 
-Create a kubeadm_conf.yaml with the following content:
+So we now have installed the kubeadm tool with which we will initialize our master node. To do this we first create a config file called kubeadm_config.yaml
+
+```
+$sudo nano kubeadm_conf.yaml
+```
+
+Add the following content to it:
 
 ```
 apiVersion: kubeadm.k8s.io/v1alpha1
@@ -192,9 +198,11 @@ controllerManagerExtraArgs:
 Next initialize the the kubeadm as follows:
 
 ```
-sudo kubeadm init --token-ttl=0 --config kubeadm_conf.yaml
+$sudo kubeadm init --config kubeadm_conf.yaml
 ```
 
-We pass in --token-ttl=0 so that the token never expires - do not use this setting in production.
+The above command will take some time to finish. Have a coffee break and be back! Once it is done, you will see the following lines towards the end of the console:
+
+TODO: Add content from the log file
 
 ### STEP 4: Set up K8s Worker
