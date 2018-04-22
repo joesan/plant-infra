@@ -90,7 +90,15 @@ sudo nano /etc/hostname
 
 This file contains only one line - the name of your Pi.  Change the name to whatever you like, but only use the letters 'a' to 'z' (upper or lower), digits '0' to '9', and the dash '-'
 
-Since you are ssh'ing for the first time 
+Save the file using Ctrl+x, then Y followed by Enter
+
+There is a second file that also contains the hostname. Therefore you should also edit that file:
+
+```
+sudo nano /etc/hosts
+```
+
+Find the line starting with 127.0.0.1, and change the name following it to your new hostname.  Save the file using Ctrl+x, then Y followed by Enter
 
 #### Set a static IP for the Pi
 
