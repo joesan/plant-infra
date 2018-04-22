@@ -126,7 +126,7 @@ static ip_address=192.168.0.100/24
 static routers=192.168.0.1
 static domain_name_servers=8.8.8.8
 ```
-Make sure that you change the ip_address accordingly. Here in my case, I would just name them from 101 to 110. So my k8s-master-01 would be allocated to 192.168.0.101 and my k8s-master-02 would be allocated to 192.168.0.102 and so on!
+Make sure that you change the ip_address accordingly. Here in my case, I would just name them from 101 to 110. So my k8s-master-01 would be allocated to 192.168.0.101 and my k8s-master-02 would be allocated to 192.168.0.102 and so on! You might additionally add a rule in your routers DHCP server configuration and set this static ip address to the corresponding Mac address of the Pi. Consult your routers documentation on how to do this!
 
 Once you have done this, let us reboot the pi so that your settings could take effect. Just give the following command to reboot your Pi:
 
