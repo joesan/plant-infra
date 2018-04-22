@@ -180,7 +180,7 @@ We are now done with the needed installations, it is now time to set up our mast
 
 ### STEP 4: Set up K8s Master
 
-So we now have installed the kubeadm tool with which we will initialize our master node. To do this we first create a config file called kubeadm_config.yaml
+So we now have installed the kubeadm tool, we will use this to initialize our master node. To do this we first create a config file called kubeadm_config.yaml
 
 ```
 $sudo nano kubeadm_conf.yaml
