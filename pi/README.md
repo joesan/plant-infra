@@ -46,15 +46,33 @@ There is one very important step that you should do to enable SSH access to your
 $ touch /Volumes/boot/ssh
 ```
 
+The above command will create an tmpty ssh file under the boot directory of your flashed SD card. This is vital for doing remote SSH login to your Pi.
+
 REPEAT STEP 1 FOR ALL OF YOUR PI's
 
-### STEP 2: Boot up the Pi
+### STEP 2: Boot up & Configure the Pi
 
 Insert the flashed SD card in the Pi and hook up the power source. The power source will be your AUKEY USB Power Source that you might have purchased. Assuming that you have a home router, connect the LAN cable of your home router to the LAN slot on the Pi. We will make the following changes to the Pi:
 
-#### Change the default hostname
+#### Log In To Your Raspberry Pi
 
-Now, by default your pi has raspbian.local as the host name. It makes sense to change this so that you can later on ssh into it
+For you to be able to ssh into your Pi, you have to identify what the IP address your home router has allocated to your Pi. You can do this by logging on to the homepage of your home router. It should be generally available at one of the following URL's:
+
+http://192.168.0.1 or http://192.168.1.1
+
+If prompted for a "Settings Password", you can find it from your ISP documentation or look for a sticker on your home router for the password. Once you log in, look for a link that says "All Connected Devices" or "Connected Devices". You should then be able to see your Raspberry Pi and get the IP address. Have a look at the screenshot below:
+
+TODO: Add screenshot
+
+#### Change the hostname
+
+Now, by default your pi has raspbian.local as the host name. It makes sense to change this so that you can later on ssh into it with your hostname that you can identify and relate to. I would rename my Pi to something meaningful and contextful. In this case, I would name my Pi's as masters and workers. Since we are dealing with multiple masters and workers, I would assign each Pi, the corresponding name with a number associated with it. For example., if I have multiple masters, I would name them k8s-master-01, kas-master-02 and so on.
+
+To set the hostname for your Pi, do the following:
+
+#### Set a static IP for the Pi
+
+
 
 REPEAT STEP 2 FOR ALL OF YOUR PI's
 
