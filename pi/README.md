@@ -18,7 +18,7 @@ You need the following items to work with:
 
 * Power supply for the Pi's - The official power supply recommendation for the Pi 3 model B+ is a 5v and 2.5A - Take a look [here](https://www.raspberrypi.org/help/faqs/) and search for "WHAT ARE THE POWER REQUIREMENTS" on that page. So based on this, I would recommend to get the following:
 
-AUKEY 6 Port 60W USB Charger - Have a look [here](https://www.amazon.de/dp/B01EH11AS8/ref=pe_3044161_185740101_TE_item)
+  AUKEY 6 Port 60W USB Charger - Have a look [here](https://www.amazon.de/dp/B01EH11AS8/ref=pe_3044161_185740101_TE_item)
 
 * You need micro USB cables to power up your pi
 
