@@ -212,3 +212,5 @@ If you are aiming for a HA master / etcd setup, have a look at the following off
 https://kubernetes.io/docs/setup/independent/high-availability/#installing-prerequisites-on-masters
 
 ### STEP 4: Set up K8s Worker
+
+Having set up the master node, let us now see how we can set up the worker and join it with the master!
