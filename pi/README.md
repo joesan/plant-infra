@@ -62,7 +62,7 @@ http://192.168.0.1 or http://192.168.1.1
 
 If prompted for a "Settings Password", you can find it from your ISP documentation or look for a sticker on your home router for the password. Once you log in, look for a link that says "All Connected Devices" or "Connected Devices". You should then be able to see your Raspberry Pi and get the IP address. For example., have a look at the screenshot below for the list of devices that are connected to my home network:
 
-TODO: Add screenshot
+https://github.com/joesan/plant-infra/blob/master/pi/connected_devices.png
 
 #### Change the default password and the hostname
 
