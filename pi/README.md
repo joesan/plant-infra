@@ -71,7 +71,7 @@ It is a good practice to change the default password of your Pi, which is raspbe
 Open a terminal windown on your local machine and ssh into your Pi with the ip address of your Pi:
 
 ```
-$ ssh pi@192.168.0.122
+$ ssh pi@192.168.0.227
 ```
 
 Type the password and log in. Once logged in, give the following command to change the password:
