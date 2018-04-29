@@ -40,13 +40,13 @@ For flashing the SD card, you can download this awesome tool from resin.io, the 
 
 Once you download Etcher, the flashing process is pretty simple and straight forward. Just add the image, select the drive (Etcher even pre-selects the SD card for you. Just verify it for the correctness and hit Flash.
 
-There is one very important step that you should do to enable SSH access to your Pi once you connect it to your router. On your Mac, after you have flashed your SD card, open a Terminal window and do the following:
+There is one very important step that you should do to enable SSH access to your Pi once you connect it to your router. On your Mac, after you have flashed your SD card, open a Terminal window and run the following command:
 
 ```
 $ touch /Volumes/boot/ssh
 ```
 
-The above command will create an tmpty ssh file under the boot directory of your flashed SD card. This is vital for doing remote SSH login to your Pi.
+The above command will create an tmpty ssh file under the boot directory of your flashed SD card. This is essential for doing remote SSH login to your Pi.
 
 REPEAT STEP 1 FOR ALL OF YOUR PI's
 
