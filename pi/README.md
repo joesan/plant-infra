@@ -132,11 +132,20 @@ Copy and paste this block of settings in the dhcpcd.conf file:
 
 ```
 profile static_eth0
-static ip_address=192.168.0.100/24
+static ip_address=192.168.0.101/24
 static routers=192.168.0.1
-static domain_name_servers=8.8.8.8
+static domain_name_servers=192.168.0.1
 ```
 Make sure that you change the ip_address accordingly. Here in my case, I would just name them from 101 to 110. So my k8s-master-01 would be allocated to 192.168.0.101 and my k8s-master-02 would be allocated to 192.168.0.102 and so on! You might additionally add a rule in your routers DHCP server configuration and set this static ip address to the corresponding Mac address of the Pi. Consult your routers documentation on how to do this!
+
+For my reference, here is how my IP addresses look like:
+
+| | Device SSH Login Name |  Device SSH Login Password | Static IP Address |
+| --- | --- |  --- |  --- |
+| Master-01 | ssh@k8s-master-01.local | ???? | 192.168.0.101 |
+| Worker-01 | ssh@k8s-worker-01.local | ???? | 192.168.0.106 |
+| Worker-02 | ssh@k8s-worker-02.local | ???? | 192.168.0.107 |
+| Worker-03 | ssh@k8s-worker-03.local | ???? | 192.168.0.108 |
 
 Once you have done this, let us reboot the pi so that your settings could take effect. Just give the following command to reboot your Pi:
 
