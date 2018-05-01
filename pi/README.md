@@ -311,4 +311,12 @@ pi@k8s-worker-01:~ $
 
 Repeat the join command on all the other worker nodes as well!
 
+#### NOTE:
+
+There is one small issue with respect to networking that you need to get away with.
+
+Have a look [here](https://stackoverflow.com/questions/50115803/kubernetes-worker-node-in-status-notready) for the actual issue and the fix that you need to apply on each worker node!
+
+Once you have performed all the above steps, you should see all your worker nodes up and running and waiting for commands from the master node.
+
 Happy Kuberneting!!!!
