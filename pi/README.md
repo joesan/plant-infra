@@ -282,4 +282,8 @@ https://kubernetes.io/docs/setup/independent/high-availability/#installing-prere
 
 Having set up the master node, let us now see how we can set up the worker and eventually join it with the master!
 
-So setting up the worker nodes is just a matter of joining it with a running master node. Here is how to do it!
+So setting up the worker nodes is just a matter of joining it with a running master node. Here is how to do it. Just make sure to run this command as a root user!
+
+```
+sudo kubeadm join --token your token 192.168.0.101:6443 --discovery-token-ca-cert-hash your hash
+```
