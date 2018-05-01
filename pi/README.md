@@ -317,6 +317,12 @@ There is one small issue with respect to networking that you need to get away wi
 
 Have a look [here](https://stackoverflow.com/questions/50115803/kubernetes-worker-node-in-status-notready) for the actual issue and the fix that you need to apply on each worker node!
 
+You just need to comment out or remove the KUBELET_NETWORK_ARGS from the kuberadm.conf on your worker nodes
+
+```
+$sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+```
+
 Once you have performed all the above steps, you should see all your worker nodes up and running and waiting for commands from the master node.
 
 Happy Kuberneting!!!!
