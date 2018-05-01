@@ -201,6 +201,16 @@ REPEAT STEP 3 FOR ALL OF YOUR PI's
 
 ### STEP 4: Set up K8s Master
 
+As a prerequisite, we need to configure cgroup memory!
+
+We have to change also some settings connected with cgroups (which provide a mechanism for easily managing and monitoring system resources, by partitioning things like cpu time, system memory, disk and network bandwidth, into groups, then assigning tasks to those groups). Edit file /boot/cmdline.txt and add at the end following text:
+
+```
+cgroup_enable=cpuset cgroup_memory=1
+```
+
+Without this settings we will have troubles with initialization of Kubernetes master node.
+
 So we now have installed the kubeadm tool, we will use this to initialize our master node. To do this we first create a config file called kubeadm_config.yaml
 
 ```
