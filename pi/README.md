@@ -259,7 +259,7 @@ Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
 You can now join any number of machines by running the following on each node
 as root:
 
-  kubeadm join --token 31f222.dceff5b3b8318019 192.168.0.101:6443 --discovery-token-ca-cert-hash sha256:0817b62e3e9d4b1407db8653c71df87d70fc21a4331aad8c9367a7a7f774a59e
+  kubeadm join --token 31f222.uiopf5b3b8765432 192.168.0.101:6443 --discovery-token-ca-cert-hash sha256:0817b62e3e9d4b1407db8653c71df87d70fc21a4331aad8czU87hgdgsh89Op0
 ```
 
 Now, just follow the instructions from the output that you got!
@@ -270,11 +270,31 @@ $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
+Now, let us verify if our master is up and running:
+
+```
+pi@k8s-master-01:~ $ kubectl get nodes
+NAME            STATUS     ROLES     AGE       VERSION
+k8s-master-01   NotReady   master    7m        v1.9.6
+pi@k8s-master-01:~ $
+```
+
+Don’t mind the status being NotReady. In order for the master node to become ready we need to install a container network. Let us do that now!
+
+#### Set up the container network
+
+Nodes are not able to communicate without a container network, which is something you have to provide. Therefore, the final piece of the puzzle is to add one. We will be using weave-net for this. On the master node, run the following command:
+
+```
+$ kubectl apply -f https://git.io/weave-kube-1.6
+```
+
+#### HA Master SetUp
 If you are aiming for a HA master / etcd setup, have a look at the following official documentation. It is a bit elaborated and a time consuming process to set up HA master / etcd. So good luck and if you manage to do it, please let me know!
 
 https://kubernetes.io/docs/setup/independent/high-availability/#installing-prerequisites-on-masters
 
-### STEP 5: Set up K8s Worker
+### STEP 5: Join K8s Worker
 
 Having set up the master node, let us now see how we can set up the worker and eventually join it with the master!
 
