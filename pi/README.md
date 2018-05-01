@@ -42,7 +42,7 @@ Now that we have all the components that we need, it is time for us to get start
 
 ### STEP 1: Download the Raspbian OS & Flash the SD Card
 
-Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbian/) and download the latest version of the software that is available. At the time of this writing, it is the April 2018 version that I used. Get the one with no UI packages in it. I downloaded the RASPBIAN STRETCH LITE. Once you download the zip file, you can either extract it or if you intend to use Etcher, you can leave it as is.
+Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbian/){:target="_blank"} and download the latest version of the software that is available. At the time of this writing, it is the April 2018 version that I used. Get the one with no UI packages in it. I downloaded the RASPBIAN STRETCH LITE. Once you download the zip file, you can either extract it or if you intend to use Etcher, you can leave it as is.
 
 For flashing the SD card, you can download this awesome tool from resin.io, the "Etcher" - You can download it from [here](https://etcher.io/)
 
@@ -118,7 +118,7 @@ Make sure you supply the .local to the hostname, otherwise it does not work!
 
 #### Set a static IP for the Pi
 
-It makes sense here to assign a static IP for your Pi, even though this is considered a bad practice in the networking world. But we want to make sure that the cluster does not break when you power off ynd on your set of Pi's. To set a static IP do the following:
+It makes sense here to assign a static IP for your Pi, even though this is considered a bad practice in the networking world. But we want to make sure that the cluster does not break when you power on and off your set of Pi's. To set a static IP do the following:
 
 From the ssh terminal window, give the following command:
 
