@@ -240,7 +240,25 @@ $sudo kubeadm init --config kubeadm_conf.yaml
 
 The above command will take some time to finish. Have a coffee break and be back! Once it is done, you will see the following lines towards the end of the console:
 
-TODO: Add content from the log file
+```
+...
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join --token 31f222.dceff5b3b8318019 192.168.0.101:6443 --discovery-token-ca-cert-hash sha256:0817b62e3e9d4b1407db8653c71df87d70fc21a4331aad8c9367a7a7f774a59e
+```
 
 If you are aiming for a HA master / etcd setup, have a look at the following official documentation. It is a bit elaborated and a time consuming process to set up HA master / etcd. So good luck and if you manage to do it, please let me know!
 
