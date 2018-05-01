@@ -12,9 +12,9 @@ You need the following items to work with:
 
 * Raspberry Pi (Either model 2 or model 3) - Get the model 3 B+ as it carries more power. I recommend getting atleast 4 of them.
 
-* A stackable case to hold your Pi's - I got [this case](https://tinyurl.com/ycpe78u3) and a [holding plate](https://tinyurl.com/ycomf998) from Amazon Germany. The holding place for me is just a way for me to be able to stack more Pi's later on. You will find something similiar in your region. Search for "Stackable open Raspberry Pi cases" and I'm sure you will find something similiar to mine.
+* A stackable case to hold your Pi's - I got <a href="https://tinyurl.com/ycpe78u3" target="_blank">this case</a> and a <a href="https://tinyurl.com/ycomf998" target="_blank">holding plate</a> from Amazon Germany. The holding place for me is just a way for me to be able to stack more Pi's later on. You will find something similiar in your region. Search for "Stackable open Raspberry Pi cases" and I'm sure you will find something similiar to mine.
 
-* 32 GB Micro SDHC cards - Get a class 10 than has a good read / write speed. I bought the [San Disk Ultra](https://tinyurl.com/y9fx6k6b) with 32 GB capacity.
+* 32 GB Micro SDHC cards - Get a class 10 than has a good read / write speed. I bought the <a href="https://tinyurl.com/y9fx6k6b" target="_blank">San Disk Ultrae</a> with 32 GB capacity.
 
 * Power supply for the Pi's - The official power supply recommendation for the Pi 3 model B+ is a 5v and 2.5A - Take a look [here](https://www.raspberrypi.org/help/faqs/) and search for "WHAT ARE THE POWER REQUIREMENTS" on that page. So based on this, I would recommend to get the following:
 
@@ -42,7 +42,7 @@ Now that we have all the components that we need, it is time for us to get start
 
 ### STEP 1: Download the Raspbian OS & Flash the SD Card
 
-Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbian/){:target="_blank"} and download the latest version of the software that is available. At the time of this writing, it is the April 2018 version that I used. Get the one with no UI packages in it. I downloaded the RASPBIAN STRETCH LITE. Once you download the zip file, you can either extract it or if you intend to use Etcher, you can leave it as is.
+Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbian/) and download the latest version of the software that is available. At the time of this writing, it is the April 2018 version that I used. Get the one with no UI packages in it. I downloaded the RASPBIAN STRETCH LITE. Once you download the zip file, you can either extract it or if you intend to use Etcher, you can leave it as is.
 
 For flashing the SD card, you can download this awesome tool from resin.io, the "Etcher" - You can download it from [here](https://etcher.io/)
 
