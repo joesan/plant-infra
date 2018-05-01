@@ -12,11 +12,7 @@ Have a look [here](https://github.com/joesan/plant-infra/blob/master/pi/SHOPPING
 
 ## Set Up Steps
 
-Now that we have all the components that we need, it is time for us to get started with the set up! As always, for the impatient, here is how the final setup would look like:
-
-![Final Setup 1](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup_1.JPG)
-
-![Final Setup 2](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup_2.JPG)
+Now that we have all the components that we need, it is time for us to get started with the set up! 
 
 ### STEP 1: Download the Raspbian OS & Flash the SD Card
 
@@ -333,5 +329,11 @@ k8s-worker-01   Ready     <none>    1h        v1.9.6
 k8s-worker-02   Ready     <none>    1h        v1.9.6
 k8s-worker-03   Ready     <none>    19m       v1.9.6
 ```
+
+Some pictures of the final setup:
+
+![Final Setup 1](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup_1.JPG)
+
+![Final Setup 2](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup_2.JPG)
 
 #### HAPPY KUBERNETING ####
