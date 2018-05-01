@@ -46,7 +46,7 @@ Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbi
 
 For flashing the SD card, you can download this awesome tool from resin.io, the "Etcher" - You can download it from [here](https://etcher.io/)
 
-Once you download Etcher, the flashing process is pretty simple and straight forward. Just add the image, select the drive (Etcher even pre-selects the SD card for you. Just verify it for the correctness and hit Flash.
+Once you download Etcher, the flashing process is pretty simple and straight forward. Just add the image, select the drive Etcher even pre-selects the SD card for you. Just verify it for the correctness of the selecetd drive and hit Flash.
 
 ![Etcher Flashing](https://github.com/joesan/plant-infra/blob/master/pi/images/Etcher.png)
 
