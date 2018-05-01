@@ -147,7 +147,25 @@ For my reference, here is how my IP addresses look like:
 | Worker-02 | ssh@k8s-worker-02.local | ???? | 192.168.0.107 |
 | Worker-03 | ssh@k8s-worker-03.local | ???? | 192.168.0.108 |
 
-Once you have done this, let us reboot the pi so that your settings could take effect. Just give the following command to reboot your Pi:
+#### Configure CGroup Memory
+
+As a prerequisite, we need to configure cgroup memory!
+
+We have to change also some settings connected with cgroups (which provide a mechanism for easily managing and monitoring system resources, by partitioning things like cpu time, system memory, disk and network bandwidth, into groups, then assigning tasks to those groups). Edit file /boot/cmdline.txt and add at the end following text:
+
+```
+cgroup_enable=cpuset cgroup_memory=1
+```
+
+If that did not work, use the following setting:
+
+```
+cgroup_enable=memory cgroup_memory=1
+```
+
+Without this settings we will have troubles with initialization of Kubernetes master node.
+
+Once you have done all the steps above, let us reboot the pi so that your settings could take effect. Just give the following command to reboot your Pi:
 
 ```
 sudo reboot
@@ -200,22 +218,6 @@ We are now done with the needed installations, it is now time to set up our mast
 REPEAT STEP 3 FOR ALL OF YOUR PI's
 
 ### STEP 4: Set up K8s Master
-
-As a prerequisite, we need to configure cgroup memory!
-
-We have to change also some settings connected with cgroups (which provide a mechanism for easily managing and monitoring system resources, by partitioning things like cpu time, system memory, disk and network bandwidth, into groups, then assigning tasks to those groups). Edit file /boot/cmdline.txt and add at the end following text:
-
-```
-cgroup_enable=cpuset cgroup_memory=1
-```
-
-If that did not work, use the following setting:
-
-```
-cgroup_enable=memory cgroup_memory=1
-```
-
-Without this settings we will have troubles with initialization of Kubernetes master node.
 
 So we now have installed the kubeadm tool, we will use this to initialize our master node. To do this we first create a config file called kubeadm_config.yaml
 
