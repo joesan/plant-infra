@@ -48,6 +48,8 @@ For flashing the SD card, you can download this awesome tool from resin.io, the 
 
 Once you download Etcher, the flashing process is pretty simple and straight forward. Just add the image, select the drive (Etcher even pre-selects the SD card for you. Just verify it for the correctness and hit Flash.
 
+![Connected Devices](https://github.com/joesan/plant-infra/blob/master/pi/images/Etcher.png)
+
 There is one very important step that you should do to enable SSH access to your Pi once you connect it to your router. On your Mac, after you have flashed your SD card, open a Terminal window and run the following command:
 
 ```
