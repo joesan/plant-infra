@@ -30,7 +30,9 @@ I would prefer not to spend any more money on any additional accessories like a 
 
 ## Set Up Steps
 
-Now that we have all the components that we need, it is time for us to get started with the set up!
+Now that we have all the components that we need, it is time for us to get started with the set up! As always, for the impatient, here is how the final setup would look like:
+
+![Connected Devices](https://github.com/joesan/plant-infra/blob/master/pi/connected_devices.png)
 
 ### STEP 1: Download the Raspbian OS & Flash the SD Card
 
