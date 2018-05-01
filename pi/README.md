@@ -154,6 +154,12 @@ As a prerequisite, we need to configure cgroup memory!
 We have to change also some settings connected with cgroups (which provide a mechanism for easily managing and monitoring system resources, by partitioning things like cpu time, system memory, disk and network bandwidth, into groups, then assigning tasks to those groups). Edit file /boot/cmdline.txt and add at the end following text:
 
 ```
+sudo nano /boot/cmdline.txt
+```
+
+Add the following at the end of the file:
+
+```
 cgroup_enable=cpuset cgroup_memory=1
 ```
 
