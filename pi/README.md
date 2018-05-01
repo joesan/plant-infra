@@ -26,13 +26,17 @@ You need the following items to work with:
   
 * Category 6 Flat LAN cables (TODO: Add Documentation....)
 
+Here is what I ended up with:
+
+![RASPI Shopping](https://github.com/joesan/plant-infra/blob/master/pi/images/raspi_shopping.JPG)
+
 I would prefer not to spend any more money on any additional accessories like a monitor or a USB keyboard. You can do this whole setup as headless. Please read on to find out how!
 
 ## Set Up Steps
 
 Now that we have all the components that we need, it is time for us to get started with the set up! As always, for the impatient, here is how the final setup would look like:
 
-![Connected Devices](https://github.com/joesan/plant-infra/blob/master/pi/connected_devices.png)
+![Final Setup](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup.JPG)
 
 ### STEP 1: Download the Raspbian OS & Flash the SD Card
 
@@ -64,7 +68,7 @@ http://192.168.0.1 or http://192.168.1.1
 
 If prompted for a "Settings Password", you can find it from your ISP documentation or look for a sticker on your home router for the password. Once you log in, look for a link that says "All Connected Devices" or "Connected Devices". You should then be able to see your Raspberry Pi and get the IP address. For example., have a look at the screenshot below for the list of devices that are connected to my home network:
 
-![Connected Devices](https://github.com/joesan/plant-infra/blob/master/pi/connected_devices.png)
+![Connected Devices](https://github.com/joesan/plant-infra/blob/master/pi/images/connected_devices.png)
 
 #### Change the default password and the hostname
 
