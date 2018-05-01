@@ -323,6 +323,15 @@ You just need to comment out or remove the KUBELET_NETWORK_ARGS from the kuberad
 $sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
 
-Once you have performed all the above steps, you should see all your worker nodes up and running and waiting for commands from the master node.
+Once you have performed all the above steps, you should see all your worker nodes up and running and waiting for commands from the master node. Here is the result of the kubectl get nodes command on my master:
+
+```
+pi@k8s-master-01:~ $ kubectl get nodes
+NAME            STATUS    ROLES     AGE       VERSION
+k8s-master-01   Ready     master    1h        v1.9.6
+k8s-worker-01   Ready     <none>    1h        v1.9.6
+k8s-worker-02   Ready     <none>    1h        v1.9.6
+k8s-worker-03   Ready     <none>    19m       v1.9.6
+```
 
 #### HAPPY KUBERNETING ####
