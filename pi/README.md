@@ -262,6 +262,14 @@ as root:
   kubeadm join --token 31f222.dceff5b3b8318019 192.168.0.101:6443 --discovery-token-ca-cert-hash sha256:0817b62e3e9d4b1407db8653c71df87d70fc21a4331aad8c9367a7a7f774a59e
 ```
 
+Now, just follow the instructions from the output that you got!
+
+```
+$ mkdir -p $HOME/.kube
+$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
 If you are aiming for a HA master / etcd setup, have a look at the following official documentation. It is a bit elaborated and a time consuming process to set up HA master / etcd. So good luck and if you manage to do it, please let me know!
 
 https://kubernetes.io/docs/setup/independent/high-availability/#installing-prerequisites-on-masters
