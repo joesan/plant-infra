@@ -325,4 +325,4 @@ $sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 
 Once you have performed all the above steps, you should see all your worker nodes up and running and waiting for commands from the master node.
 
-Happy Kuberneting!!!!
+#### HAPPY KUBERNETING ####
