@@ -209,6 +209,12 @@ We have to change also some settings connected with cgroups (which provide a mec
 cgroup_enable=cpuset cgroup_memory=1
 ```
 
+If that did not work, use the following setting:
+
+```
+cgroup_enable=memory cgroup_memory=1
+```
+
 Without this settings we will have troubles with initialization of Kubernetes master node.
 
 So we now have installed the kubeadm tool, we will use this to initialize our master node. To do this we first create a config file called kubeadm_config.yaml
