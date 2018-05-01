@@ -233,3 +233,5 @@ https://kubernetes.io/docs/setup/independent/high-availability/#installing-prere
 ### STEP 5: Set up K8s Worker
 
 Having set up the master node, let us now see how we can set up the worker and eventually join it with the master!
+
+So setting up the worker nodes is just a matter of joining it with a running master node. Here is how to do it!
