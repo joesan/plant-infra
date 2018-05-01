@@ -287,3 +287,28 @@ So setting up the worker nodes is just a matter of joining it with a running mas
 ```
 sudo kubeadm join --token your token 192.168.0.101:6443 --discovery-token-ca-cert-hash your hash
 ```
+
+Running the above command on my system gives me the following output:
+
+```
+[preflight] Running pre-flight checks.
+	[WARNING SystemVerification]: docker version is greater than the most recently validated version. Docker version: 18.04.0-ce. Max validated version: 17.03
+	[WARNING FileExisting-crictl]: crictl not found in system path
+[discovery] Trying to connect to API Server "192.168.0.101:6443"
+[discovery] Created cluster-info discovery client, requesting info from "https://192.168.0.101:6443"
+[discovery] Requesting info from "https://192.168.0.101:6443" again to validate TLS against the pinned public key
+[discovery] Cluster info signature and contents are valid and TLS certificate validates against pinned roots, will use API Server "192.168.0.101:6443"
+[discovery] Successfully established connection with API Server "192.168.0.101:6443"
+
+This node has joined the cluster:
+* Certificate signing request was sent to master and a response
+  was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run 'kubectl get nodes' on the master to see this node join the cluster.
+pi@k8s-worker-01:~ $
+```
+
+Repeat the join command on all the other worker nodes as well!
+
+Happy Kuberneting!!!!
