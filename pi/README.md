@@ -14,7 +14,7 @@ You need the following items to work with:
 
 * A stackable case to hold your Pi's - I got <a href="https://tinyurl.com/ycpe78u3" target="_blank">this case</a> and a <a href="https://tinyurl.com/ycomf998" target="_blank">holding plate</a> from Amazon Germany. The holding place for me is just a way for me to be able to stack more Pi's later on. You will find something similiar in your region. Search for "Stackable open Raspberry Pi cases" and I'm sure you will find something similiar to mine.
 
-* 32 GB Micro SDHC cards - Get a class 10 than has a good read / write speed. I bought the <a href="https://tinyurl.com/y9fx6k6b" target="_blank">San Disk Ultrae</a> with 32 GB capacity.
+* 32 GB Micro SDHC cards - Get a class 10 than has a good read / write speed. I bought the <a href="https://tinyurl.com/y9fx6k6b" target="_blank">San Disk Ultra</a> with 32 GB capacity.
 
 * Power supply for the Pi's - The official power supply recommendation for the Pi 3 model B+ is a 5v and 2.5A - Take a look [here](https://www.raspberrypi.org/help/faqs/) and search for "WHAT ARE THE POWER REQUIREMENTS" on that page. So based on this, I would recommend to get the following:
 
@@ -219,6 +219,6 @@ If you are aiming for a HA master / etcd setup, have a look at the following off
 
 https://kubernetes.io/docs/setup/independent/high-availability/#installing-prerequisites-on-masters
 
-### STEP 4: Set up K8s Worker
+### STEP 5: Set up K8s Worker
 
-Having set up the master node, let us now see how we can set up the worker and join it with the master!
+Having set up the master node, let us now see how we can set up the worker and eventually join it with the master!
