@@ -36,7 +36,9 @@ I would prefer not to spend any more money on any additional accessories like a 
 
 Now that we have all the components that we need, it is time for us to get started with the set up! As always, for the impatient, here is how the final setup would look like:
 
-![Final Setup](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup.JPG)
+![Final Setup 1](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup_1.JPG)
+
+![Final Setup 2](https://github.com/joesan/plant-infra/blob/master/pi/images/final_setup_2.JPG)
 
 ### STEP 1: Download the Raspbian OS & Flash the SD Card
 
