@@ -8,7 +8,7 @@ You need to set up your Pi's with the OS, the K8s cluster, connect the Pi's to t
 
 ## Shopping List
 
-Have a look [here](https://github.com/joesan/plant-infra/blob/master/pi/SHOPPING_LIST.md)
+Have a look [here](https://github.com/joesan/plant-infra/blob/master/pi/SHOPPING_LIST.md) for a complete list of items that you need!
 
 ## Set Up Steps
 
@@ -16,11 +16,11 @@ Now that we have all the components that we need, it is time for us to get start
 
 ### STEP 1: Download the Raspbian OS & Flash the SD Card
 
-Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbian/) and download the latest version of the software that is available. At the time of this writing, it is the April 2018 version that I used. Get the one with no UI packages in it. I downloaded the RASPBIAN STRETCH LITE. Once you download the zip file, you can either extract it or if you intend to use Etcher, you can leave it as is.
+Head on to the [Raspbian Downloads](https://www.raspberrypi.org/downloads/raspbian/) and download the latest version of the OS that is available. At the time of this writing, it is the April 2018 version that I used. Get the one with no UI packages in it as you don't need it. I downloaded the RASPBIAN STRETCH LITE. Once you download the zip file, you can either extract it or if you intend to use Etcher, you can leave it as is as Etcher can flash your SD card from a zip file.
 
-For flashing the SD card, you can download this awesome tool from resin.io, the "Etcher" - You can download it from [here](https://etcher.io/)
+For flashing the SD card, you can download this awesome tool from resin.io, the "Etcher" - Download from [here](https://etcher.io/)
 
-Once you download Etcher, the flashing process is pretty simple and straight forward. Just add the image, select the drive Etcher even pre-selects the SD card for you. Just verify it for the correctness of the selecetd drive and hit Flash.
+Once you download Etcher, the flashing process is pretty simple and straight forward. Just add the image, select the drive Etcher even pre-selects the SD card for you. Just verify it for the correctness of the selecetd drive and hit Flash. Here is a screengrab of the process on my Mac!
 
 ![Etcher Flashing](https://github.com/joesan/plant-infra/blob/master/pi/images/Etcher.png)
 
@@ -30,7 +30,7 @@ There is one very important step that you should do to enable SSH access to your
 $ touch /Volumes/boot/ssh
 ```
 
-The above command will create an tmpty ssh file under the boot directory of your flashed SD card. This is essential for doing remote SSH login to your Pi.
+The above command will create an empty ssh file under the boot directory of your flashed SD card. This is essential for doing remote SSH login to your Pi.
 
 REPEAT STEP 1 FOR ALL OF YOUR PI's
 
@@ -50,9 +50,9 @@ If prompted for a "Settings Password", you can find it from your ISP documentati
 
 #### Change the default password and the hostname
 
-It is a good practice to change the default password of your Pi, which is raspberry. To change the default password, do the following:
+It is a good practice to change the default password of your Pi, which is always raspberry. If you leave the default password as is, you risk your home network to vulnerabilities. To change the default password, do the following:
 
-Open a terminal windown on your local machine and ssh into your Pi with the ip address of your Pi:
+Open a terminal windown on your local machine and ssh into your Pi with the ip address of your Pi. The default username will be pi
 
 ```
 $ ssh pi@192.168.0.227
@@ -61,7 +61,7 @@ $ ssh pi@192.168.0.227
 Type the password and log in. Once logged in, give the following command to change the password:
 
 ```
-$ raspbian.local:~ pi$ passwd
+$ pi@raspbian.local:~ pi$ passwd
 ```
 
 Now, by default your pi has raspbian.local as the host name. It makes sense to change this so that you can later on ssh into it with your hostname that you can identify and relate to. I would rename my Pi to something meaningful and contextful. In this case, I would name my Pi's as masters and workers. Since we are dealing with multiple masters and workers, I would assign each Pi, the corresponding name with a number associated with it. For example., if I have multiple masters, I would name them k8s-master-01, kas-master-02 and so on.
@@ -69,7 +69,7 @@ Now, by default your pi has raspbian.local as the host name. It makes sense to c
 To set the hostname for your Pi, do the following:
 
 ```
-sudo nano /etc/hostname
+$ pi@raspbian.local:~ sudo nano /etc/hostname
 ```
 
 This file contains only one line - the name of your Pi.  Change the name to whatever you like, but only use the letters 'a' to 'z' (upper or lower), digits '0' to '9', and the dash '-'
@@ -79,7 +79,7 @@ Save the file using Ctrl+x, then Y followed by Enter
 There is a second file that also contains the hostname. Therefore you should also edit that file:
 
 ```
-sudo nano /etc/hosts
+$ pi@raspbian.local:~ sudo nano /etc/hosts
 ```
 
 Find the line starting with 127.0.0.1, and change the name following it to your new hostname.  Save the file using Ctrl+x, then Y followed by Enter.
@@ -99,7 +99,7 @@ It makes sense here to assign a static IP for your Pi, even though this is consi
 From the ssh terminal window, give the following command:
 
 ```
-sudo nano /etc/dhcpcd.conf
+$ pi@raspbian.local:~ sudo nano /etc/dhcpcd.conf
 ```
 
 Copy and paste this block of settings in the dhcpcd.conf file:
@@ -112,7 +112,7 @@ static domain_name_servers=192.168.0.1
 ```
 Make sure that you change the ip_address accordingly. Here in my case, I would just name them from 101 to 110. So my k8s-master-01 would be allocated to 192.168.0.101 and my k8s-master-02 would be allocated to 192.168.0.102 and so on! You might additionally add a rule in your routers DHCP server configuration and set this static ip address to the corresponding Mac address of the Pi. Consult your routers documentation on how to do this!
 
-For my reference, here is how my IP addresses look like:
+For my reference, here is how my IP addresses look like. I have one master and three worker nodes:
 
 | | Device SSH Login Name |  Device SSH Login Password | Static IP Address |
 | --- | --- |  --- |  --- |
@@ -123,12 +123,12 @@ For my reference, here is how my IP addresses look like:
 
 #### Configure CGroup Memory
 
-As a prerequisite, we need to configure cgroup memory!
+As a very important prerequisite, we need to configure cgroup memory!
 
 We have to change also some settings connected with cgroups (which provide a mechanism for easily managing and monitoring system resources, by partitioning things like cpu time, system memory, disk and network bandwidth, into groups, then assigning tasks to those groups). Edit file /boot/cmdline.txt and add at the end following text:
 
 ```
-sudo nano /boot/cmdline.txt
+$ sudo nano /boot/cmdline.txt
 ```
 
 Add the following at the end of the file:
@@ -148,7 +148,7 @@ Without this settings we will have troubles with initialization of Kubernetes ma
 Once you have done all the steps above, let us reboot the pi so that your settings could take effect. Just give the following command to reboot your Pi:
 
 ```
-sudo reboot
+$ sudo reboot
 ```
 
 When you log in the next time, you should be able to see the ip address that you have just configured for the Pi.
@@ -160,14 +160,14 @@ REPEAT STEP 2 FOR ALL OF YOUR PI's
 Use the following command to install Docker:
 
 ```
-curl -sSL get.docker.com | sh && \
+$ curl -sSL get.docker.com | sh && \
   sudo usermod pi -aG docker
 ```
 
 For Kubernetes 1.7 and newer you will get an error if swap space is enabled, so we need to disable swap:
 
 ```
-sudo dphys-swapfile swapoff && \
+$ sudo dphys-swapfile swapoff && \
   sudo dphys-swapfile uninstall && \
   sudo update-rc.d dphys-swapfile remove
 ```
@@ -181,7 +181,7 @@ $ sudo swapon --summary
 Once Docker is installed and swap disabled, we can proceed with the installation of [kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/). Now if you are concerned about installting a specific version of the kubernetes cluster, you can try the following command that will give you all the available versions:
 
 ```
-curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages | grep Version | awk '{print $2}'
+$ curl -s https://packages.cloud.google.com/apt/dists/kubernetes-xenial/main/binary-amd64/Packages | grep Version | awk '{print $2}'
 ```
 
 You can now decide on the version that you want toinstall. As a side note, as of this writing, it is advisable to not go beyond 1.9.6 version of Kubernetes as the later versions have some bugs and is unstable at the moment.
@@ -202,7 +202,7 @@ REPEAT STEP 3 FOR ALL OF YOUR PI's
 So we now have installed the kubeadm tool, we will use this to initialize our master node. To do this we first create a config file called kubeadm_config.yaml
 
 ```
-$sudo nano kubeadm_conf.yaml
+$ sudo nano kubeadm_conf.yaml
 ```
 
 Add the following content to it:
@@ -217,7 +217,7 @@ controllerManagerExtraArgs:
 Next initialize the the kubeadm as follows:
 
 ```
-$sudo kubeadm init --config kubeadm_conf.yaml
+$ sudo kubeadm init --config kubeadm_conf.yaml
 ```
 
 The above command will take some time to finish. Have a coffee break and be back! Once it is done, you will see the following lines towards the end of the console:
@@ -316,7 +316,7 @@ Have a look [here](https://stackoverflow.com/questions/50115803/kubernetes-worke
 You just need to comment out or remove the KUBELET_NETWORK_ARGS from the kuberadm.conf on your worker nodes
 
 ```
-$sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+pi@k8s-worker-01:~ $ sudo nano /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
 
 Once you have performed all the above steps, you should see all your worker nodes up and running and waiting for commands from the master node. Here is the result of the kubectl get nodes command on my master:
