@@ -1,6 +1,6 @@
 # Kubernetes Cluster SetUp on a Raspberry Pi 
 
-This is a multi step process and we go through each of this in this document
+This is a multi step process and we go through each of this in this document! Having patience is recommended!
 
 ## Pre-Requisites
 
